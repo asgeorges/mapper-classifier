@@ -5,4 +5,6 @@ We have developed a robust classifier that is based on topological data analysis
 
 This sw package allows the user to construct a robust mapper classifier in the task of computer vision for the MNIST and Fashion-MNIST datasets.  The code refactoring will also make our sw consistent with current classes implemented in scikit-learn.  
 
-If you would like to refer to the theoretical foundation and seminal paper, please refer to:  The authors of the paper and software package are Jacek Cyranka (jcyranka@gmail.com) & Alex Georges (alexgrgs2314@gmail.com). 
+If you would like to refer to the theoretical foundation and seminal paper, please refer to:  
+
+The authors of the paper and software package are Jacek Cyranka (jcyranka@gmail.com) & Alex Georges (alexgrgs2314@gmail.com). 
