@@ -25,22 +25,22 @@ Feel free to contact the authors about any questions you may have in the sw, the
 
 ## DIRECTORY STRUCTURE
 
-data_temp/: This is where we store some critical files that will be used later on in the workflow.  These can also be
+__data_temp/__: This is where we store some critical files that will be used later on in the workflow.  These can also be
 useful debugging tools.
 
-data_test_fashion_unnormalized/: Where raw test file(s) are kept for fashion.  You can change the naming here to however
- you want.  There are parameters in the scripts you will be running that allow for these name changes.
+__data_test_fashion_unnormalized/__: Where raw test file(s) are kept for fashion.  You can change the naming here to however
+ you want.  There are parameters in the scripts you will be running that allow for these name changes.  _You will need to uncompress the data located here_. 
 
-data_train_fashion_unnormalized/: Same as above.
+__data_train_fashion_unnormalized/__: Same as above.
 
-images/: Where we output our images to.
+__images/__: Where we output our images to.
 
-lib/: Where all the heavy lifting scripts are located.  All the processing happens in files here.  Wrappers happen
+__lib/__: Where all the heavy lifting scripts are located.  All the processing happens in files here.  Wrappers happen
 in src/.  More on these scripts below.
 
-results/: Where we output some critical files, including produced matrix mapper objects.
+__results/__: Where we output some critical files, including produced matrix mapper objects.
 
-results_final/:  Where we output results from an entire adversary run.  See the workflow below.
+__results_final/__:  Where we output results from an entire adversary run.  See the workflow below.
 
 
 ## WORKFLOW
