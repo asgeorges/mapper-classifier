@@ -1,1 +1,0 @@
-for file in `find . -name "results*"`; do cp $file ../adversary\ explorations/Summary\ of\ Rounds/; done

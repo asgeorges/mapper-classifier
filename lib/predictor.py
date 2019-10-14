@@ -238,39 +238,39 @@ def iterator(results_dir, images_dir='../images', pcastart=1, pcaend=20,
     """
 
 
-stamp = '%s %s' % (meta[0], meta[1])
-stamp2 = str(results_dir).split('/')[2]
+    stamp = '%s %s' % (meta[0], meta[1])
+    stamp2 = str(results_dir).split('/')[2]
 
-pcaend += 1
-components = range(pcastart, pcaend)
+    pcaend += 1
+    components = range(pcastart, pcaend)
 
-accuracy = []
-for model in models:
-    train = []
-    test = []
-    for k in range(pcastart, pcaend, 1):
-        tra, tes = predictor('merged_mappers_all_%s.csv' % k, 'test_merged_mappers_all_%s.csv' % k, results_dir,
-                             method=model)
-        train += tra,
-        test += tes,
-    accuracy.append([model, train, test])
+    accuracy = []
+    for model in models:
+        train = []
+        test = []
+        for k in range(pcastart, pcaend, 1):
+            tra, tes = predictor('merged_mappers_all_%s.csv' % k, 'test_merged_mappers_all_%s.csv' % k, results_dir,
+                                 method=model)
+            train += tra,
+            test += tes,
+        accuracy.append([model, train, test])
 
-# accuracy[i] is for ith model
-# accuracy[i][0] is model name
-# accuracy[i][1] is train accuracy
-# accuracy[i][2] is test accuracy
-fig, ax = plt.subplots()
-for i in range(len(models)):
-    plt.plot(components, accuracy[i][2], label=accuracy[i][0])
+    # accuracy[i] is for ith model
+    # accuracy[i][0] is model name
+    # accuracy[i][1] is train accuracy
+    # accuracy[i][2] is test accuracy
+    fig, ax = plt.subplots()
+    for i in range(len(models)):
+        plt.plot(components, accuracy[i][2], label=accuracy[i][0])
 
-plt.legend(loc="upper left")
-plt.xlabel('Component')
-plt.ylabel('Accuracy')
-plt.title("Classification Accuracy, %s" % (stamp))
-plt.savefig('%s/Accuracy %s %s, RF Noise 1.pdf' % (images_dir, stamp, stamp2), bbox_inches='tight', pad_inches=0)
-if show == True:
-    plt.show()
-plt.close()
+    plt.legend(loc="upper left")
+    plt.xlabel('Component')
+    plt.ylabel('Accuracy')
+    plt.title("Classification Accuracy, %s" % (stamp))
+    plt.savefig('%s/Accuracy %s %s, RF Noise 1.pdf' % (images_dir, stamp, stamp2), bbox_inches='tight', pad_inches=0)
+    if show == True:
+        plt.show()
+    plt.close()
 
 
 def iterator2(results_dir, images_dir='../images', pcastart=1, pcaend=20,
@@ -291,67 +291,67 @@ def iterator2(results_dir, images_dir='../images', pcastart=1, pcaend=20,
     """
 
 
-noise = range(1, 5)
+    noise = range(1, 5)
 
-stamp = '%s %s' % (meta[0], meta[1])
-stamp2 = str(results_dir).split('/')[2]
+    stamp = '%s %s' % (meta[0], meta[1])
+    stamp2 = str(results_dir).split('/')[2]
 
-pcaend += 1
-components = range(pcastart, pcaend)
+    pcaend += 1
+    components = range(pcastart, pcaend)
 
-accuracy = []
+    accuracy = []
 
-# For the initial unperturbed data
-for model in models:
-    train = []
-    test = []
-    for k in range(pcastart, pcaend, 1):
-        tra, tes = predictor('merged_mappers_all_%s.csv' % k, 'test_merged_mappers_all_%s.csv' % k, results_dir,
-                             method=model)
-        train += tra,
-        test += tes,
-    accuracy.append([model, train, test, 0])
-
-# For the perturbed data
-for model in models:
-    for eps in noise:
+    # For the initial unperturbed data
+    for model in models:
         train = []
         test = []
         for k in range(pcastart, pcaend, 1):
-            tra, tes = predictor('merged_mappers_all_%s.csv' % k,
-                                 'test_merged_mappers_all_%s_%s_gauss_blur_%s.csv' % (eps, model, k), results_dir,
+            tra, tes = predictor('merged_mappers_all_%s.csv' % k, 'test_merged_mappers_all_%s.csv' % k, results_dir,
                                  method=model)
             train += tra,
             test += tes,
-        accuracy.append([model, train, test, eps])
+        accuracy.append([model, train, test, 0])
 
-# accuracy[i] is for ith model
-# accuracy[i][0] is model name
-# accuracy[i][1] is train accuracy
-# accuracy[i][2] is test accuracy
-fig, ax = plt.subplots()
-for i in range(len(accuracy)):
-    plt.plot(components, accuracy[i][2], label='%s %s' % (accuracy[i][0], accuracy[i][3]))
+    # For the perturbed data
+    for model in models:
+        for eps in noise:
+            train = []
+            test = []
+            for k in range(pcastart, pcaend, 1):
+                tra, tes = predictor('merged_mappers_all_%s.csv' % k,
+                                     'test_merged_mappers_all_%s_%s_gauss_blur_%s.csv' % (eps, model, k), results_dir,
+                                     method=model)
+                train += tra,
+                test += tes,
+            accuracy.append([model, train, test, eps])
 
-plt.legend(loc="upper left")
-plt.xlabel('Component')
-plt.ylabel('Accuracy')
-plt.title("Classification Accuracy, %s" % (stamp))
-plt.savefig('%s/Accuracy %s %s, Perturbed.pdf' % (images_dir, stamp, stamp2), bbox_inches='tight', pad_inches=0)
-if show == True:
-    plt.show()
-plt.close()
+    # accuracy[i] is for ith model
+    # accuracy[i][0] is model name
+    # accuracy[i][1] is train accuracy
+    # accuracy[i][2] is test accuracy
+    fig, ax = plt.subplots()
+    for i in range(len(accuracy)):
+        plt.plot(components, accuracy[i][2], label='%s %s' % (accuracy[i][0], accuracy[i][3]))
 
-fig, ax = plt.subplots()
-for i in range(len(accuracy)):
-    plt.plot(components, accuracy[i][1], label='%s %s' % (accuracy[i][0], accuracy[i][3]))
+    plt.legend(loc="upper left")
+    plt.xlabel('Component')
+    plt.ylabel('Accuracy')
+    plt.title("Classification Accuracy, %s" % (stamp))
+    plt.savefig('%s/Accuracy %s %s, Perturbed.pdf' % (images_dir, stamp, stamp2), bbox_inches='tight', pad_inches=0)
+    if show == True:
+        plt.show()
+    plt.close()
 
-plt.legend(loc="upper left")
-plt.xlabel('Component')
-plt.ylabel('Accuracy')
-plt.title("Classification Accuracy, %s" % (stamp))
-plt.savefig('%s/Train Accuracy %s %s, Perturbed.pdf' % (images_dir, stamp, stamp2), bbox_inches='tight',
-            pad_inches=0)
-if show == True:
-    plt.show()
-plt.close()
+    fig, ax = plt.subplots()
+    for i in range(len(accuracy)):
+        plt.plot(components, accuracy[i][1], label='%s %s' % (accuracy[i][0], accuracy[i][3]))
+
+    plt.legend(loc="upper left")
+    plt.xlabel('Component')
+    plt.ylabel('Accuracy')
+    plt.title("Classification Accuracy, %s" % (stamp))
+    plt.savefig('%s/Train Accuracy %s %s, Perturbed.pdf' % (images_dir, stamp, stamp2), bbox_inches='tight',
+                pad_inches=0)
+    if show == True:
+        plt.show()
+    plt.close()

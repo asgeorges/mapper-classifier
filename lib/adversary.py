@@ -66,7 +66,7 @@ def test_block(argsl):
     file_train = argsl[10]
 
     pymapper(file_train, 'data_perturbed_%s_%s_%s.csv' % (int(epsilon), classification_model, noise_model),
-             '../data_train_unnormalized/', '../data_temp', train='no',
+             '../data_train_fashion_unnormalized', '../data_temp', train='no',
              epsilon=int(epsilon), map_method=map_method, kpca=kpca,
              real_matrix=real_matrix, dimensions=1, component=k, num_int=num_int,
              num_bin=num_bin, idx='yes', filter_type=filter_type)
@@ -107,7 +107,7 @@ def adversary(data_dir_nodes, test_data_nodes, num_int, num_bin, PCArange, file_
     ###################################################################################################################
     ###################################################################################################################
 
-    data_dir_test = '../data_test_unnormalized'  # this is the location of the raw test data (i.e. the data with all the pixel values)
+    data_dir_test = '../data_test_fashion_unnormalized'  # this is the location of the raw test data (i.e. the data with all the pixel values)
     test_data = 'trueexamples_in.csv'  # this is the name of the raw test data (i.e. the data with all the pixel values)
 
     # data_dir_nodes = '../results/round38_5_10_pca_33gain'		# this is the location of the node test data (i.e. the binary mapper representation of test points)
