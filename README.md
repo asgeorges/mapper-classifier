@@ -70,32 +70,32 @@ varying amounts of noise), this is the workflow:
 ## SCRIPTS
 
 
-_src/doit.sh_: Bash wrapper script.  Params are input here then passed to runner.py.  Useful if you want to do many
+__src/doit.sh__: Bash wrapper script.  Params are input here then passed to runner.py.  Useful if you want to do many
 adversary runs.
 
-_src/runner.py_: Python wrapper script.  Combines all other python modules used to test robustness.
+__src/runner.py__: Python wrapper script.  Combines all other python modules used to test robustness.
 
-_src/doit.py_: Script that facilitates running other specific modules, rather than the entire workflow.  For instance, you
+__src/doit.py__: Script that facilitates running other specific modules, rather than the entire workflow.  For instance, you
  can run just pymapper() from here.  Useful for testing specific piece of the workflow.
 
-_lib/tools.py_: This is used to consolidate repeated functions used throughout the code and generally just help with
+__lib/tools.py__: This is used to consolidate repeated functions used throughout the code and generally just help with
 cleanup.
 
-_lib/pymapper.py_: This code does all the heavy lifting - matrix mapper objects are constructed here.
+__lib/pymapper.py__: This code does all the heavy lifting - matrix mapper objects are constructed here.
 
-_lib/mnist_mapper_light_template1D.r_:  The R implementation of the sw that produces a single mapper.
+__lib/mnist_mapper_light_template1D.r__:  The R implementation of the sw that produces a single mapper.
 
-_lib/predictor.py_: Contains various end classifiers you can attach to the train committee and test committee of mapper
+__lib/predictor.py__: Contains various end classifiers you can attach to the train committee and test committee of mapper
 objects
 
-_lib/adversary.py_: Iteratively perturbs data and records l2-norms when data points are misclassified through entire
+__lib/adversary.py__: Iteratively perturbs data and records l2-norms when data points are misclassified through entire
 workflow
 
-_lib/plotter.py_: Plots final data of l2 norms so we can compare how the various methods perform
+__lib/plotter.py__: Plots final data of l2 norms so we can compare how the various methods perform
 
-_lib/variational*.py_: Scripts constructed by the keras team that implement VAE
+__lib/variational*.py__: Scripts constructed by the keras team that implement VAE
 
-_lib/joiner.py_: This joins all the independent matrix mapper objects, which are in csv form.  In our analysis, this
+__lib/joiner.py__: This joins all the independent matrix mapper objects, which are in csv form.  In our analysis, this
 function would merge 20 files for train and then 20 files for test.
 
 
