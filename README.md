@@ -1,9 +1,7 @@
 
 # mapper-classifier
 
-#########################################################
-INTRODUCTION
-#########################################################
+# INTRODUCTION
 
 This repository contains the initial PoC software to build a mapper based classifier.  The package here does not scale
 well - however, work is currently being done to refactor this code into a polished package.  If you have questions about
@@ -25,9 +23,7 @@ The authors of the paper and software package are:
     Jacek Cyranka: jcyranka@gmail.com
 Feel free to contact the authors about any questions you may have in the sw, theory, or otherwise.
 
-#########################################################
-DIRECTORY STRUCTURE
-#########################################################
+## DIRECTORY STRUCTURE
 
 data_temp/: This is where we store some critical files that will be used later on in the workflow.  These can also be
 useful debugging tools.
@@ -47,15 +43,13 @@ results/: Where we output some critical files, including produced matrix mapper 
 results_final/:  Where we output results from an entire adversary run.  See the workflow below.
 
 
-#########################################################
-WORKFLOW
-There are various pieces of the workflow you can implement.  We'll go largest to smallest in terms of the pipeline.
-The first block will be what directory to navigate to, then what command(s) to run.
-The second block of code will be the workflow pipeline that will be run by your command(s).
+## WORKFLOW
+### There are various pieces of the workflow you can implement.  We'll go largest to smallest in terms of the pipeline.
+### The first block will be what directory to navigate to, then what command(s) to run.
+### The second block of code will be the workflow pipeline that will be run by your command(s).
 
-In either workflow, you will have to change parameters, including directory naming schemes (sorry!) according to your
-analysis.  The defaults may not behave well for you.
-#########################################################
+### In either workflow, you will have to change parameters, including directory naming schemes (sorry!) according to your
+### analysis.  The defaults may not behave well for you.
 
 
 1) If you want to run an entire adversary run (i.e. determine how robust matrix mapper classifiers are with respect to
@@ -75,9 +69,8 @@ varying amounts of noise), this is the workflow:
         doit.py -> pymapper.py
 
 
-#########################################################
-SCRIPTS
-#########################################################
+## SCRIPTS
+
 
 src/doit.sh: Bash wrapper script.  Params are input here then passed to runner.py.  Useful if you want to do many
 adversary runs.
