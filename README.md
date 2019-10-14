@@ -1,7 +1,7 @@
 
 # mapper-classifier
 
-# INTRODUCTION
+## INTRODUCTION
 
 This repository contains the initial PoC software to build a mapper based classifier.  The package here does not scale
 well - however, work is currently being done to refactor this code into a polished package.  If you have questions about
