@@ -29,7 +29,7 @@ data_temp/: This is where we store some critical files that will be used later o
 useful debugging tools.
 
 data_test_fashion_unnormalized/: Where raw test file(s) are kept for fashion.  You can change the naming here to however
- you want.  There are parameters in the scripts you will be running that allow for these name changes.
+ you want.  There are parameters in the scripts you will be running that allow for these name changes.  You will need to uncompress the data located here. 
 
 data_train_fashion_unnormalized/: Same as above.
 
