@@ -21,6 +21,7 @@ If you would like to refer to the theoretical foundation and seminal paper, plea
 The authors of the paper and software package are:
 - Alex Georges: alexgrgs2314@gmail.com
 - Jacek Cyranka: jcyranka@gmail.com
+
 Feel free to contact the authors about any questions you may have in the sw, theory, or otherwise.
 
 ## DIRECTORY STRUCTURE
