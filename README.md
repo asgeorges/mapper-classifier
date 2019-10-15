@@ -66,7 +66,7 @@ varying amounts of noise), this is the workflow:
                              -> predictor.py
                              -> adversary.py
                              
-        _Various calls are made to functions within tools.py throughout this pipeline as well_
+        * Various calls are made to functions within tools.py throughout this pipeline as well
 
 
 2) If you want to just create the matrix mapper objects (train and/or testing):
@@ -76,7 +76,7 @@ varying amounts of noise), this is the workflow:
 
         doit.py -> pymapper.py
 
-        _Various calls are made to functions within tools.py throughout this pipeline as well_
+        * Various calls are made to functions within tools.py throughout this pipeline as well
 
 ## SCRIPTS
 
