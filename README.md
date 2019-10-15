@@ -43,6 +43,10 @@ __results/__: Where we output some critical files, including produced matrix map
 
 __results_final/__:  Where we output results from an entire adversary run.  See the workflow below.
 
+## SETUP
+
+Either virtualenv setup or docker
+
 
 ## WORKFLOW
 ### There are various pieces of the workflow you can implement.  We'll go largest to smallest in terms of the pipeline.
@@ -57,10 +61,13 @@ varying amounts of noise), this is the workflow:
         cd src/
         ./doit.sh
 
-        doit.sh -> runner.py -> pymapper.py
+        doit.sh -> runner.py -> pymapper.py -> mnist_mapper_light_template1D.r
                              -> joiner.py
                              -> predictor.py
                              -> adversary.py
+                             
+        Various calls are made to functions within tools.py throughout this pipeline as well
+
 
 2) If you want to just create the matrix mapper objects (train and/or testing):
     
@@ -69,6 +76,7 @@ varying amounts of noise), this is the workflow:
 
         doit.py -> pymapper.py
 
+        Various calls are made to functions within tools.py throughout this pipeline as well
 
 ## SCRIPTS
 
