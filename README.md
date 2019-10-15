@@ -74,7 +74,7 @@ varying amounts of noise), this is the workflow:
         cd src/
         python doit.py
 
-        doit.py -> pymapper.py
+        doit.py -> pymapper.py -> mnist_mapper_light_template1D.r
 
         * Various calls are made to functions within tools.py throughout this pipeline as well
 
