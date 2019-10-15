@@ -53,8 +53,8 @@ __results_final/__:  Where we output results from an entire adversary run.  See 
 1) If you want to run an entire adversary run (i.e. determine how robust matrix mapper classifiers are with respect to
 varying amounts of noise), this is the workflow:
     
-    cd src/
-    ./doit.sh
+        cd src/
+        ./doit.sh
 
         doit.sh -> runner.py -> pymapper.py
                              -> joiner.py
@@ -63,8 +63,8 @@ varying amounts of noise), this is the workflow:
 
 2) If you want to just create the matrix mapper objects (train and/or testing):
     
-    cd src/
-    python doit.py
+        cd src/
+        python doit.py
 
         doit.py -> pymapper.py
 
