@@ -11,7 +11,7 @@ import numpy as np
 import math
 import csv
 import numbers
-from tools import *
+from mapper_tools import *
 import scipy as sp
 from sklearn.decomposition import PCA
 from sklearn.model_selection import train_test_split

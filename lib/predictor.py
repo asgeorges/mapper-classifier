@@ -11,7 +11,7 @@ import numpy as np
 import math
 import csv
 import numbers
-from tools import *
+from mapper_tools import *
 import scipy as sp
 from sklearn.decomposition import PCA
 from sklearn.model_selection import train_test_split
@@ -38,8 +38,8 @@ FNULL = open(os.devnull, 'w')
 curr_dir = os.getcwd()
 
 """
-This script implements various end classifiers to the mappers.  The overall mapper classifier consists of the merged 
-matrix mappers (in the csv file which will be called something like merged_mappers_all_15.csv) and the end 
+This script implements various end classifiers to the mappers.  The overall mapper classifier consists of the merged
+matrix mappers (in the csv file which will be called something like merged_mappers_all_15.csv) and the end
 classifier you train below.  The trained model will be saved as a yummy pickle.
 """
 

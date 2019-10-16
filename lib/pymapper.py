@@ -14,7 +14,6 @@ from matplotlib import pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from mpl_toolkits.mplot3d import proj3d
 import xml.etree.ElementTree as ET
-import yaml
 import json
 import codecs
 import glob
@@ -23,7 +22,7 @@ import scipy as sp
 import subprocess
 from numpy import linalg as LA
 from itertools import chain
-from tools import *
+from mapper_tools import *
 import pickle
 from scipy.spatial import distance
 from skimage.filters import scharr, gabor

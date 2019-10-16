@@ -3,12 +3,11 @@ import sys, os, glob, shutil
 
 sys.path.append('../lib/')
 
-from tools import *
+from mapper_tools import *
 from pymapper import pymapper
 from adversary import *
 from predictor import *
 from joiner import *
-# from plotter import *
 from variational_autoencoder import *
 from os import listdir
 from os.path import isfile, join

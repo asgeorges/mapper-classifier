@@ -24,7 +24,6 @@ from scipy.cluster.hierarchy import linkage, fcluster, dendrogram
 from mpl_toolkits.mplot3d import Axes3D
 from mpl_toolkits.mplot3d import proj3d
 import xml.etree.ElementTree as ET
-import yaml
 import json
 import codecs
 import glob
@@ -54,8 +53,8 @@ sys.setrecursionlimit(10000)
 FNULL = open(os.devnull, 'w')
 
 """
-tools.py is used throughout the workflow and contains modules that are frequently used.   If there are any questions 
-about what is implemented here, feel free to contact the authors. 
+tools.py is used throughout the workflow and contains modules that are frequently used.   If there are any questions
+about what is implemented here, feel free to contact the authors.
 """
 
 
@@ -651,17 +650,17 @@ def contractive_autoencoder(X, lam=1e-4, N_batch=100, N_epoch=100):
     #layer = Dense(784, activation='relu')(inputs)
     #layer = Dropout(0.1)(layer)
     #layer = Dense(392, activation='sigmoid')(inputs)
-    
+
     layer = Dense(1000, activation='sigmoid')(inputs)
     layer = Dense(500, activation = 'sigmoid')(layer)
     layer = Dense(250, activation = 'sigmoid')(layer)
-    
+
     encoded = Dense(20, activation='linear', name='encoded')(layer)
-    
+
     layer = Dense(250, activation = 'sigmoid')(encoded)
     layer = Dense(500, activation = 'sigmoid')(layer)
     layer = Dense(1000, activation = 'sigmoid')(layer)
-    
+
     #layer = Dense(784, activation='relu')(encoded)
     #layer = Dropout(0.1)(layer)
     #layer = Dense(392, activation='relu')(encoded)
@@ -671,19 +670,19 @@ def contractive_autoencoder(X, lam=1e-4, N_batch=100, N_epoch=100):
 
     def contractive_loss(y_pred, y_true):
             mse = K.mean(K.square(y_true - y_pred), axis=1)
-        
+
             W = K.variable(value=model.get_layer('encoded').get_weights()[0])  # N x N_hidden
-            W = K.transpose(W)  # N_hidden x N 
+            W = K.transpose(W)  # N_hidden x N
             h = model.get_layer('encoded').output
             #dh = h * (1 - h)  # N_batch x N_hidden
-            
+
             lam = 0
             contractive = 0
             # N_batch x N_hidden * N_hidden x 1 = N_batch x 1
             #contractive = lam * K.sum(dh**2 * K.sum(W**2, axis=1), axis=1)
             #contractive = lam * K.sum( K.sum(W**2, axis=1) )
-            
-            return mse + contractive	
+
+            return mse + contractive
     '''
     model.compile(optimizer='adam', loss=contractive_loss)
     model.fit(X, X, batch_size=N_batch, epochs=N_epoch, shuffle=True, verbose=0)
@@ -1132,7 +1131,7 @@ def pca_test(train_data,test_data,stamp,num_int,component,gain=0.33,scale_featur
 	elif scale_features == 'robust':
 		train_data = preprocessing.robust_scale(train_data)
 		test_data = preprocessing.robust_scale(test_data)
-	
+
 	pca_name = '../data_temp/projPCA_%s.model' %(stamp2)
 
 	if os.path.exists(pca_name) == False:
@@ -1150,7 +1149,7 @@ def pca_test(train_data,test_data,stamp,num_int,component,gain=0.33,scale_featur
 
 	Hits=[]
 	for entry in proj_test[:,component]:
-		hits=[]        
+		hits=[]
 		if entry < node_intervals[0][1]: # this pushes points that are less than min to the min
 			entry = node_intervals[0][1]
 		elif entry >= node_intervals[-1][2]: # this pushes points that are greater than max to the max

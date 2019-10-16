@@ -28,7 +28,7 @@ def file_opener(file):
     return cutoffs
 
 
-def plotter():
+def l2_plotter():
     results_dir = '../results_final/fashion/60k'
     stamp = '60k Fashion'
     noise_model = 'S&P'
@@ -84,4 +84,4 @@ def plotter():
 
 
 if __name__ == '__main__':
-    plotter()
+    l2_plotter()
