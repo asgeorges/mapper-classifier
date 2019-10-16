@@ -29,7 +29,7 @@ map_method = sys.argv[7]
 file_train = sys.argv[8]
 
 stamp = '%s' % (file_train.split('.')[0])
-total_range = range(1, 3, 1)
+total_range = range(1, 21, 1)
 filter_type = None
 
 
