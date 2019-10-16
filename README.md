@@ -19,8 +19,8 @@ scikit-learn.
 If you would like to refer to the theoretical foundation and seminal paper, please refer to our paper.
 
 The authors of the paper and software package are:
-- Alex Georges: alexgrgs2314 gmail
-- Jacek Cyranka: jcyranka gmail
+- Alex Georges: alexgrgs2314 at gmail
+- Jacek Cyranka: jcyranka at gmail
 
 Feel free to contact the authors about any questions you may have in the sw, theory, or otherwise.
 
