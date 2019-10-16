@@ -49,7 +49,7 @@ The installation procedure below is based on a virtualenv.  We will soon have a 
 
 1) Create and start up a virtualenv:
 
-        conda create --name myenv
+        conda create -n myenv python=3 
         conda activate myenv
         
 2) Install R and R dependencies:
