@@ -5,7 +5,7 @@
 
 This repository contains the initial PoC software to build a mapper based classifier.  The package here does not scale
 well - however, work is currently being done to refactor this code into a polished package.  If you have questions about
-this effort, please contact [Jacek Cyranka](http://cseweb.ucsd.edu/~jcyranka/): jcyranka@gmail.com
+this effort, please contact [Jacek Cyranka](http://cseweb.ucsd.edu/~jcyranka/): jcyranka at gmail
 
 We have developed a robust classifier that is based on topological data analysis.  It’s a novel approach to
 classification tasks that is both very general and powerful.  As a specific use case, its robustness makes it
@@ -19,8 +19,8 @@ scikit-learn.
 If you would like to refer to the theoretical foundation and seminal paper, please refer to our paper.
 
 The authors of the paper and software package are:
-- Alex Georges: alexgrgs2314@gmail.com
-- Jacek Cyranka: jcyranka@gmail.com
+- Alex Georges: alexgrgs2314 gmail
+- Jacek Cyranka: jcyranka gmail
 
 Feel free to contact the authors about any questions you may have in the sw, theory, or otherwise.
 
