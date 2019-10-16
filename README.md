@@ -43,6 +43,29 @@ __results/__: Where we output some critical files, including produced matrix map
 
 __results_final/__:  Where we output results from an entire adversary run.  See the workflow below.
 
+## SETUP
+
+The installation procedure below is based on a virtualenv.  We will soon have a Docker image as well.
+
+1) Create and start up a virtualenv:
+
+        conda create --name myenv
+        conda activate myenv
+        
+2) Install R and R dependencies:
+
+        brew install R
+        R
+        install.packages(c("networkD3","devtools","fastcluster","igraph"), repos="https://cloud.r-project.org")
+        library(devtools)
+        devtools::install_github("paultpearson/TDAmapper", force=TRUE)        
+        q()
+        
+3) Install other dependencies:
+        
+        cd mapper-classifier/
+        pip install -r requirements.txt
+        
 
 ## WORKFLOW
 ### There are various pieces of the workflow you can implement.  We'll go largest to smallest in terms of the pipeline.
@@ -57,18 +80,22 @@ varying amounts of noise), this is the workflow:
         cd src/
         ./doit.sh
 
-        doit.sh -> runner.py -> pymapper.py
+        doit.sh -> runner.py -> pymapper.py -> mnist_mapper_light_template1D.r
                              -> joiner.py
                              -> predictor.py
                              -> adversary.py
+                             
+        * Various calls are made to functions within tools.py throughout this pipeline as well
+
 
 2) If you want to just create the matrix mapper objects (train and/or testing):
     
         cd src/
         python doit.py
 
-        doit.py -> pymapper.py
+        doit.py -> pymapper.py -> mnist_mapper_light_template1D.r
 
+        * Various calls are made to functions within tools.py throughout this pipeline as well
 
 ## SCRIPTS
 
