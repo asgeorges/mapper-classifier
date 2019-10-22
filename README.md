@@ -9,8 +9,7 @@ this effort, please contact [Jacek Cyranka](http://cseweb.ucsd.edu/~jcyranka/): 
 
 We have developed a robust classifier that is based on topological data analysis.  It’s a novel approach to
 classification tasks that is both very general and powerful.  As a specific use case, its robustness makes it
-particularly useful for tasks in computer vision.  Here, minor “defects” in the image can easily fool current state of
-the art methods, whereas our algorithm far outperforms these.
+particularly useful for tasks in computer vision.  In vision tasks, minor “defects” in the image can easily fool current state of the art methods, whereas our algorithm far outperforms these.
 
 This sw package allows the user to construct a robust mapper classifier in the task of computer vision for the MNIST
 and Fashion-MNIST datasets.  The code refactoring will also make our sw consistent with current classes implemented in
