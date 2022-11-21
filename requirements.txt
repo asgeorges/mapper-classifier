@@ -5,7 +5,7 @@ pandas==0.25.1
 matplotlib==3.1.1
 scipy==1.3.1
 Keras==2.3.1
-tensorflow==2.0.0
+tensorflow==2.9.3
 scikit_learn==0.21.3
 predictor==0.1.2
 adversary==1.1.1
